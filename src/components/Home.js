@@ -85,14 +85,13 @@ export default function Home() {
             }
         }
         getData()
-    }, [])
+    }, [change])
 
     function deleteData(id) {
         if (isLogin) {
             const docToUpdate = doc(db, 'posts', id)
             deleteDoc(docToUpdate)
                 .then(() => {
-                    alert("Post Deleted")
                     editechange(!change)
                 })
                 .catch((err) => {
